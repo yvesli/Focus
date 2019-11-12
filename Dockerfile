@@ -5,6 +5,6 @@ WORKDIR /usr/app
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install -r backend/requirements.txt
 
-CMD python3 app/app.py
+CMD python3 app.py
