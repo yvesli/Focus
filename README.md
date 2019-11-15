@@ -21,7 +21,7 @@ This is a self-motivating app that can help restrain usage of your smartphone.
 ## How to use
 To use api services via api requests, it has several essential components
 ### Web API components
-* [Authentification](#api-authentification)
+* [Authentification](#api-authentication)
 
 
 ## More to come
@@ -30,7 +30,7 @@ To use api services via api requests, it has several essential components
 * Download to local devices and analysis
 
 ---
-#### API Authentification
+#### API Authentication
 In order to use our web services, user has to login first to sync history from
 and to the cloud.
 
