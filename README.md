@@ -29,7 +29,7 @@ To use api services via api requests, it has several essential components
 * Data categorizing
 * Download to local devices and analysis
 
-
+---
 #### API Authentification
 In order to use our web services, user has to login first to sync history from
 and to the cloud.
