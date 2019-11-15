@@ -6,3 +6,4 @@ lib/
 pyvenv.cfg
 env/
 .idea
+frontend/
