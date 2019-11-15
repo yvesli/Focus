@@ -30,14 +30,13 @@ To use api services via api requests, it has several essential components
 * Download to local devices and analysis
 
 
-#### API Login
+#### API Authentication
 In order to use our web services, user has to login first to sync history from
 and to the cloud.
 
 ##### Sign up
 Requests to sign up should be post to 'domain/api/signup' in
 JSON format containing information about 'username', 'password' and 'email'.
-
 ##### Login
 After signing up as a user, you can make requests to 'domain/api/login' in JSON
 with previously created 'email' and 'password'. One login session would be
