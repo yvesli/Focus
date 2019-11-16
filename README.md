@@ -35,10 +35,12 @@ In order to use our web services, user has to login first to sync history from
 and to the cloud.
 
 ##### Sign up
-Requests to sign up should be post to `domain/api/signup` in
+Requests to sign up should be post to `http://35.237.54.112/api/signup` in
 `JSON` format containing information about `username`, `password` and `email`.
 ##### Login
-After signing up as a user, you can make requests to `domain/api/login` in `JSON`
+After signing up as a user, you can make requests to `http://35.237.54.112/api/login` in `JSON`
 with previously created `email` and `password`. One login session would be
 remembered for half an hour and you are required to login again when the session
 expires.
+#### Logout
+User can easily logout by filing a get request to `http://35.237.54.112/api/logout`
