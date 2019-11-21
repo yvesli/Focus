@@ -16,5 +16,6 @@ def init_login_mamager(app):
         return User.query.get(int(user_id))
 
 
-from . import main
 from . import auth
+from . import main
+

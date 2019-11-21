@@ -1,5 +1,6 @@
 from flask import request
-from . import db, api
+from app.api import api
+from . import db
 import json
 from flask_login import login_required, logout_user
 

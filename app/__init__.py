@@ -3,6 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 db_filename = 'hc.db'
+dia = 'postgresql'
+ip = '34.73.159.18'
+password = 'Silly425'
+username = 'yveslyf'
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///%s' % db_filename
