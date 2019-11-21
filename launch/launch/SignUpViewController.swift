@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -44,7 +45,7 @@ class SignUpViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "Name  :"
+        title.text = "Name:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -52,6 +53,7 @@ class SignUpViewController: UIViewController {
     private let NameField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
+        textField.frame = .zero
         textField.placeholder = "Name"
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +65,7 @@ class SignUpViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "Email  :"
+        title.text = "Email:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -72,6 +74,7 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.backgroundColor = .white
         textField.placeholder = "Email"
+        textField.frame = .zero
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -82,7 +85,7 @@ class SignUpViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "Enter a new password  :"
+        title.text = "Enter a new password:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -91,6 +94,7 @@ class SignUpViewController: UIViewController {
            let textField = UITextField()
            textField.backgroundColor = .white
            textField.placeholder = "Password"
+           textField.frame = .zero
            textField.borderStyle = .roundedRect
            textField.translatesAutoresizingMaskIntoConstraints = false
            return textField
@@ -102,7 +106,7 @@ class SignUpViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "Re-Enter the password  :"
+        title.text = "Re-Enter the password:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -110,6 +114,7 @@ class SignUpViewController: UIViewController {
     private let RePasswordField: UITextField = {
            let textField = UITextField()
            textField.backgroundColor = .white
+           textField.frame = .zero
            textField.placeholder = "New Password"
            textField.borderStyle = .roundedRect
            textField.translatesAutoresizingMaskIntoConstraints = false
@@ -152,16 +157,16 @@ class SignUpViewController: UIViewController {
     }
     
     func constraintsInit() {
-        SignUpContentView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        
-        SignUpContentView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
+        SignUpContentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
+
+        SignUpContentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
+
         SignUpContentView.heightAnchor.constraint(equalToConstant:  view.frame.height / 2).isActive = true
-        
+
         SignUpContentView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         WelcomeTitle.topAnchor.constraint(equalTo: SignUpContentView.topAnchor, constant: 10).isActive = true
-        
+
         WelcomeTitle.centerXAnchor.constraint(equalTo: SignUpContentView.centerXAnchor).isActive = true
         
         NameTitle.topAnchor.constraint(equalTo: WelcomeTitle.bottomAnchor, constant: 10).isActive = true
@@ -196,9 +201,10 @@ class SignUpViewController: UIViewController {
         
         RePasswordField.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
         
-        SignUpBtn.topAnchor.constraint(equalTo: RePasswordField.bottomAnchor, constant: 10).isActive = true
+        SignUpBtn.topAnchor.constraint(equalTo: RePasswordField.bottomAnchor, constant: 40).isActive = true
         
         SignUpBtn.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 20).isActive = true
+        
         SignUpBtn.rightAnchor.constraint(equalTo: SignUpContentView.rightAnchor, constant: -20).isActive = true
         
     }

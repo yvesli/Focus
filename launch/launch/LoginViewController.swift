@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -37,7 +38,7 @@ class LoginViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "User Name  :"
+        title.text = "User Name:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -46,6 +47,7 @@ class LoginViewController: UIViewController {
        let textField = UITextField()
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
+        textField.placeholder = "User Name"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -55,7 +57,7 @@ class LoginViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "Password  :"
+        title.text = "Password:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -64,6 +66,7 @@ class LoginViewController: UIViewController {
        let textField = UITextField()
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
+        textField.placeholder = "Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -137,10 +140,9 @@ class LoginViewController: UIViewController {
     }
     
     func constraintsInit() {
-        loginContentView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+         loginContentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
          
-         loginContentView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-         
+         loginContentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
          
          loginContentView.heightAnchor.constraint(equalToConstant: view.frame.height / 3).isActive = true
          
@@ -167,7 +169,7 @@ class LoginViewController: UIViewController {
          passwordTextField.leftAnchor.constraint(equalTo: loginContentView.leftAnchor, constant: 10).isActive = true
          
          
-         LoginBtn.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20).isActive = true
+         LoginBtn.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40).isActive = true
          
          LoginBtn.leftAnchor.constraint(equalTo: loginContentView.leftAnchor, constant: 20).isActive = true
          LoginBtn.rightAnchor.constraint(equalTo: loginContentView.rightAnchor, constant: -20).isActive = true

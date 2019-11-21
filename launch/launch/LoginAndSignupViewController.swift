@@ -29,7 +29,7 @@ class LoginAndSignupViewController: UIViewController {
         signUpBtn.setTitle("Sign up", for: .normal)
         view.addSubview(signUpBtn)
         // Do any additional setup after loading the view.
-        
+        view.layer.contents = #imageLiteral(resourceName: "bike-on-the-hill-with-body-of-water-scenery-2223047").cgImage
         setUpConstraints()
     }
     
