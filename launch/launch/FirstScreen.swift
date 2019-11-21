@@ -45,6 +45,14 @@ class FirstScreen: UIViewController {
         UIView.animate(withDuration: 0.35, delay: 0.1, options: .curveEaseIn, animations: {
             self.logoImage.transform = CGAffineTransform(scaleX: 5, y: 5)
         }) { ( success ) in
+            // push LoginAndSignUp view controller
+            // set the second view controller to be UINavigationController and let the launch screen present it
+            let mainController = UINavigationController(rootViewController: LoginAndSignupViewController())
+
+            mainController.modalPresentationStyle = .fullScreen
+            
+           self.present(mainController, animated: true, completion: nil)
+            
             self.removeSplashScreen()
         }
     }
