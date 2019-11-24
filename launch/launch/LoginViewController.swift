@@ -84,6 +84,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginContentView.addSubview(loginTitle)
         loginContentView.addSubview(UsernameTitle)
         loginContentView.addSubview(usernameTextField)

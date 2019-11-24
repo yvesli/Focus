@@ -13,10 +13,19 @@ class LoginAndSignupViewController: UIViewController {
     
     var loginBtn: UIButton!
     var signUpBtn: UIButton!
-    
+    var slogan: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        view.backgroundColor = .white
+        
+//        slogan = UILabel()
+//        slogan.translatesAutoresizingMaskIntoConstraints = false
+//        slogan.font = UIFont(name: "Poppins-Regular", size: 20)
+//        slogan.text = "Actually, you can control time with your mind"
+//        slogan.textColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+//        view.addSubview(slogan)
+        
+        
         loginBtn = UIButton()
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
         loginBtn.addTarget(self, action: #selector(changeToLoginView), for: .touchUpInside)
