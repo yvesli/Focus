@@ -12,7 +12,7 @@ import UIKit
 
 class FirstScreen: UIViewController {
 
-    let logoImage = UIImageView(image: UIImage(named: "new-welcome-logo"))
+    let logoImage = UIImageView(image: UIImage(named: "rapt-welcome-logo"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,9 @@ class FirstScreen: UIViewController {
 
             mainController.modalPresentationStyle = .fullScreen
             
-           self.present(mainController, animated: true, completion: nil)
+            
+            
+           self.present(mainController, animated: false, completion: nil)
             
             self.removeSplashScreen()
         }
