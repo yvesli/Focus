@@ -8,24 +8,25 @@
 
 import UIKit
 
-protocol TimerSetupDelegate: class {
-    func timerSetup(newTitle: String, newDuration: String)
-}
-
-protocol TimerDeleteDelegate: class {
-    func timerDelete(selectedCell: UICollectionViewCell)
-}
 
 class FirstViewController: UIViewController {
+    enum mode {
+        case select
+        case view
+    }
     
     var timerCollectionView: UICollectionView!
-    var addBtn: UIButton!
+    var addBtn: UIBarButtonItem!
     var editBtn: UIBarButtonItem!
+    var deleteBtn: UIBarButtonItem!
+    var trashButton: UIButton!
+    var dictionaryIndexPath: [IndexPath: Bool] = [:]
     
     let padding: CGFloat = 8
     let timerCellReuseIdentifier = "timer"
     
     var timers: Array<TimerData> = []
+    var mMode: mode = .view
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +48,11 @@ class FirstViewController: UIViewController {
         timerCollectionView.delegate = self
         view.addSubview(timerCollectionView)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimer))
-        editBtn = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editAndDelete))
+        addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimer))
+        editBtn = UIBarButtonItem(title: "EDIT", style: .plain, target: self, action: #selector(edit))
+        deleteBtn = UIBarButtonItem(title: "DELETE", style: .plain, target: self, action: #selector(deleteTimer))
         navigationItem.leftBarButtonItem = editBtn
+        navigationItem.rightBarButtonItem = addBtn
 
         
         setUpConstraints()
@@ -61,7 +64,7 @@ class FirstViewController: UIViewController {
             timerCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             timerCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             timerCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
-        ]);
+        ])
     }
     
     
@@ -71,14 +74,34 @@ class FirstViewController: UIViewController {
         present(timerSetupView, animated: true, completion: nil)
     }
     
-    @objc func editAndDelete() {
-        if (editBtn.title == "Edit") {
-            editBtn.title = "Done"
-        } else {
+    @objc func edit() {
+        switch mMode {
+        case .select:
             editBtn.title = "Edit"
+            navigationItem.rightBarButtonItem = addBtn
+            mMode = .view
+        case .view:
+            editBtn.title = "Done"
+            navigationItem.rightBarButtonItem = deleteBtn
+            mMode = .select
         }
     }
-
+    
+    @objc func deleteTimer() {
+        var itemToDelete: [IndexPath] = []
+        for (path, isSelected) in dictionaryIndexPath {
+            if isSelected {
+                itemToDelete.append(path)
+            }
+        }
+        for indexPath in itemToDelete.sorted(by: { $0.item > $1.item }) {
+            timers.remove(at: indexPath.item)
+        }
+        timerCollectionView.deleteItems(at: itemToDelete)
+        dictionaryIndexPath.removeAll()
+    }
+    
+    
 }
 
 extension FirstViewController: UICollectionViewDataSource {
@@ -98,16 +121,37 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = (collectionView.frame.width)
-        return CGSize(width: size, height: size/5)
+        return CGSize(width: size, height: size/4)
     }
 }
 
 extension FirstViewController: UICollectionViewDelegate {
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.reloadData()
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        switch mMode {
+        case .view:
+            break
+        case .select:
+            if dictionaryIndexPath.keys.contains(indexPath) {
+                dictionaryIndexPath[indexPath] = false
+            } else {
+                dictionaryIndexPath[indexPath] = true
+            }
+        }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           switch mMode {
+           case .view:
+               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: timerCellReuseIdentifier, for: indexPath)
+               let timerSetup = TimerSetupViewController(currentCell: cell)
+               timerSetup.delegate = self
+               navigationController?.present(timerSetup, animated: true, completion: nil)
+               collectionView.reloadData()
+           case .select:
+               dictionaryIndexPath[indexPath] = true
+            }
+       }
 }
 
 extension FirstViewController: TimerSetupDelegate {

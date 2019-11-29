@@ -8,6 +8,15 @@
 
 import UIKit
 
+protocol TimerDeleteDelegate {
+    func timerDelete(selectedCell: UICollectionViewCell)
+}
+
+protocol TimerSetupDelegate {
+    func timerSetup(newTitle: String, newDuration: String)
+}
+
+
 class TimerSetupViewController: UIViewController {
     
     var setTitleLabel: UILabel!
@@ -80,7 +89,7 @@ class TimerSetupViewController: UIViewController {
     
         backBtn = UIButton()
         backBtn.translatesAutoresizingMaskIntoConstraints = false
-        backBtn.setTitle("OK", for: .normal)
+        backBtn.setTitle("Set", for: .normal)
         backBtn.setTitleColor(.black, for: .normal)
         backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         backBtn.sizeToFit()
@@ -159,6 +168,4 @@ class TimerSetupViewController: UIViewController {
         let duration = timePicker.countDownDuration
         timeText = String(Int(duration/60))
     }
-    
-
 }
