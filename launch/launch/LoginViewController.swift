@@ -78,6 +78,7 @@ class LoginViewController: UIViewController {
         btn.tintColor = .white
         btn.layer.cornerRadius = 8
         btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(getLogin), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -98,47 +99,16 @@ class LoginViewController: UIViewController {
         
         constraintsInit()
         
-        
-        
-        
-//
-//        LoginBtn.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 10).isActive = true
-//
-//        LoginBtn.leftAnchor.constraint(equalTo: loginContentView.leftAnchor).isActive = true
-//
-//        LoginBtn.rightAnchor.constraint(equalTo: loginContentView.rightAnchor).isActive = true
-        
-        
-        //        loginBtn = UIButton(type: .system)
-//        loginBtn.setTitle("Login", for: .normal)
-//
-//        loginBtn.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(loginBtn)
-//
-//
-//
-//        textField = UITextField(frame:  .zero)
-//        textField.placeholder = "User Name"
-//        textField.borderStyle = .roundedRect
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(textField)
-//
-//
-//        passwordField = UITextField(frame:  .zero)
-//        passwordField.placeholder = "Password"
-//        passwordField.isSecureTextEntry = true
-//        passwordField.borderStyle = .roundedRect
-//        passwordField.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(passwordField)
-//
-//
-//        constraintsInit()
-//        
-        
-        
         view.layer.contents = #imageLiteral(resourceName: "brown-leaves").cgImage
         
+        
     }
+    
+    @objc func getLogin() {
+        NetworkManager.postLogin(email: usernameTextField.text ?? "none", password: passwordTextField.text  ?? "none")
+    }
+    
+    
     
     func constraintsInit() {
          loginContentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true

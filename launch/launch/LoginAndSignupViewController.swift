@@ -57,6 +57,8 @@ class LoginAndSignupViewController: UIViewController {
             signUpBtn.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
+
+
     
     @objc func changeToSignUpView() {
         let signUpView = SignUpViewController()

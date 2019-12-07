@@ -26,6 +26,7 @@ class SignUpViewController: UIViewController {
         btn.tintColor = .white
         btn.layer.cornerRadius = 8
         btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(getSignUp), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -154,8 +155,14 @@ class SignUpViewController: UIViewController {
         constraintsInit()
         view.layer.contents = #imageLiteral(resourceName: "Forest-SignUp").cgImage
         // Do any additional setup after loading the view.
+        
+//        getSignUp()
     }
     
+    
+    @objc func getSignUp() {
+        NetworkManager.postSignUp(username: NameField.text ?? "none" , password: PasswordField.text ?? "none", email: EmailField.text ?? "none")
+    }
     func constraintsInit() {
         SignUpContentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
 
