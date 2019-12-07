@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
         textField.placeholder = "Password"
+        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()

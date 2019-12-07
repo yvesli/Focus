@@ -118,6 +118,7 @@ class SignUpViewController: UIViewController {
            textField.frame = .zero
            textField.placeholder = "New Password"
            textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
            textField.translatesAutoresizingMaskIntoConstraints = false
            return textField
     }()
