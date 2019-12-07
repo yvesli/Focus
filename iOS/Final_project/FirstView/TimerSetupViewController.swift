@@ -79,7 +79,8 @@ class TimerSetupViewController: UIViewController {
         } else {
             setTitleField.placeholder = "Study"
         }
-
+        setTitleField.addTarget(self, action: #selector(nothing), for: .editingDidEndOnExit)
+        setTitleField.returnKeyType = UIReturnKeyType.done
 //        setTitleField.font = UIFont.systemFont(ofSize: 20)
         
         let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 10))
@@ -205,6 +206,10 @@ class TimerSetupViewController: UIViewController {
     @objc func deleteTimerAndBack() {
         delegateDelete?.timerDelete(selectedCell: curCell!)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func nothing(){
+        
     }
     
 }

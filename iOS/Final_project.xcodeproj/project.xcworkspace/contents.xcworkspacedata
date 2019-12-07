@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Final_project.xcodeproj">
+      location = "group:/Users/pro/Desktop/apps/focus/Focus/iOS/Final_project/ThirdView/ThirdViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/pro/Desktop/apps/focus/Focus/iOS/Final_project/ThirdView/ToDoTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

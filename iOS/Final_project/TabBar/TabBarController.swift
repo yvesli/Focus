@@ -18,8 +18,8 @@ class TabBarController: UITabBarController {
     func setUpTabBar() {
         
         let firstViewController = UINavigationController(rootViewController: FirstViewController())
-        firstViewController.tabBarItem.image = UIImage(named: "text-list-7.png")
-        firstViewController.tabBarItem.title = "To-Dos"
+        firstViewController.tabBarItem.image = UIImage(named: "clock")
+        firstViewController.tabBarItem.title = "Timer"
         firstViewController.navigationBar.barTintColor = UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 1)
 
         let secondViewController = UINavigationController(rootViewController: SecondViewController())
@@ -27,7 +27,12 @@ class TabBarController: UITabBarController {
         secondViewController.tabBarItem.title = "Setting"
         secondViewController.navigationBar.barTintColor = UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 1)
         
-        viewControllers = [firstViewController, secondViewController]
+        let thirdViewController = UINavigationController(rootViewController: ThirdViewController())
+        thirdViewController.tabBarItem.image = UIImage(named: "text-list-7.png")
+        thirdViewController.tabBarItem.title = "To-Dos"
+        thirdViewController.navigationBar.barTintColor = UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 1)
+        
+        viewControllers = [firstViewController, thirdViewController, secondViewController]
     }
     
 
