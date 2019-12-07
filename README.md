@@ -42,5 +42,5 @@ After signing up as a user, you can make requests to `http://35.237.54.112/api/l
 with previously created `email` and `password`. One login session would be
 remembered for half an hour and you are required to login again when the session
 expires.
-#### Logout
+##### Logout
 User can easily logout by filing a get request to `http://35.237.54.112/api/logout`
