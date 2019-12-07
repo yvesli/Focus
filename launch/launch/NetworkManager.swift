@@ -51,8 +51,6 @@ class NetworkManager {
             "email": email
         ] as [String : String]
         
-        
-        
         Alamofire.request(signUpEndPoint, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
             print(response)
         })

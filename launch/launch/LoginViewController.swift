@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
-        title.text = "User Name:"
+        title.text = "Email:"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -104,7 +104,18 @@ class LoginViewController: UIViewController {
         
         
     }
-    
+//    @objc func isLogin() {
+//
+//       if (self.passwordField.text == nil) {
+//           let alert = UIAlertController(title: nil, message: "Password isempty", preferredStyle: .alert)
+//           let defaultAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+//           alert.addAction(defaultAction)
+//           present(alert, animated: true, completion: nil)
+//       } else {
+//           getlogin()
+//       }
+//    }
+//
     @objc func getLogin() {
         NetworkManager.postLogin(email: usernameTextField.text ?? "none", password: passwordTextField.text  ?? "none")
     }
@@ -132,6 +143,8 @@ class LoginViewController: UIViewController {
          
          usernameTextField.leftAnchor.constraint(equalTo: loginContentView.leftAnchor, constant: 10).isActive = true
          
+         usernameTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
          PassWordTitle.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 10).isActive = true
          
          PassWordTitle.leftAnchor.constraint(equalTo: loginContentView.leftAnchor, constant: 10).isActive = true
@@ -140,6 +153,7 @@ class LoginViewController: UIViewController {
 
          passwordTextField.leftAnchor.constraint(equalTo: loginContentView.leftAnchor, constant: 10).isActive = true
          
+         passwordTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
          
          LoginBtn.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40).isActive = true
          

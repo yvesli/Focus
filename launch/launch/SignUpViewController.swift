@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SignUpViewController: UIViewController {
     private let SignUpContentView: UIView = {
         let view = UIView()
@@ -26,7 +27,8 @@ class SignUpViewController: UIViewController {
         btn.tintColor = .white
         btn.layer.cornerRadius = 8
         btn.clipsToBounds = true
-        btn.addTarget(self, action: #selector(getSignUp), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(isSubmit), for: .touchUpInside)
+        
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -52,7 +54,9 @@ class SignUpViewController: UIViewController {
     }()
     
     private let NameField: UITextField = {
+        
         let textField = UITextField()
+        
         textField.backgroundColor = .white
         textField.frame = .zero
         textField.placeholder = "Name"
@@ -73,11 +77,13 @@ class SignUpViewController: UIViewController {
     
     private let EmailField: UITextField = {
         let textField = UITextField()
+        
         textField.backgroundColor = .white
         textField.placeholder = "Email"
         textField.frame = .zero
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
     
@@ -98,6 +104,8 @@ class SignUpViewController: UIViewController {
            textField.frame = .zero
            textField.borderStyle = .roundedRect
            textField.translatesAutoresizingMaskIntoConstraints = false
+           
+        
            return textField
     }()
     
@@ -112,14 +120,16 @@ class SignUpViewController: UIViewController {
         return title
     }()
     
+    
     private let RePasswordField: UITextField = {
            let textField = UITextField()
            textField.backgroundColor = .white
            textField.frame = .zero
            textField.placeholder = "New Password"
            textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
+          
            textField.translatesAutoresizingMaskIntoConstraints = false
+           
            return textField
     }()
     
@@ -130,6 +140,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
        
         
+        RePasswordField.addTarget(self, action: #selector(isPasswordMatched), for: .editingDidEnd)
         
         SignUpContentView.addSubview(WelcomeTitle)
         
@@ -151,15 +162,42 @@ class SignUpViewController: UIViewController {
         
         SignUpContentView.addSubview(SignUpBtn)
         
+        SignUpBtn.addTarget(self, action: #selector(isPasswordMatched), for: .touchDown)
+        
         view.addSubview(SignUpContentView)
         
         constraintsInit()
         view.layer.contents = #imageLiteral(resourceName: "Forest-SignUp").cgImage
         // Do any additional setup after loading the view.
         
-//        getSignUp()
+       
     }
     
+    @objc func isSubmit() {
+        if (self.PasswordField.text != self.RePasswordField.text) {
+            let alert = UIAlertController(title: nil, message: "Password unmatch", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+        } else {
+            getSignUp()
+        }
+     }
+    
+    
+    // validate an email for the right format
+    @objc func isPasswordMatched() {
+        if (self.PasswordField.text != self.RePasswordField.text) {
+            
+            self.RePasswordField.layer.borderWidth = 1
+            self.RePasswordField.layer.borderColor = UIColor.systemRed.cgColor
+        } else {
+            
+            self.RePasswordField.layer.borderWidth = 1
+            self.RePasswordField.layer.borderColor = UIColor.systemGreen.cgColor
+        }
+        view.reloadInputViews()
+    }
     
     @objc func getSignUp() {
         NetworkManager.postSignUp(username: NameField.text ?? "none" , password: PasswordField.text ?? "none", email: EmailField.text ?? "none")
@@ -185,6 +223,10 @@ class SignUpViewController: UIViewController {
         
         NameField.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
         
+        NameField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
+//        NameField.rightAnchor.constraint(equalTo: NameTitle.rightAnchor, constant: 10).isActive = true
+        
         EmailTitle.topAnchor.constraint(equalTo: NameField.bottomAnchor, constant: 10).isActive = true
         
         EmailTitle.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
@@ -192,6 +234,10 @@ class SignUpViewController: UIViewController {
         EmailField.topAnchor.constraint(equalTo: EmailTitle.bottomAnchor, constant: 10).isActive = true
         
         EmailField.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
+        
+//        EmailField.rightAnchor.constraint(equalTo: EmailTitle.rightAnchor, constant: 10).isActive = true
+        
+        EmailField.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         PassWordTitle.topAnchor.constraint(equalTo: EmailField.bottomAnchor, constant: 10).isActive = true
         
@@ -201,6 +247,9 @@ class SignUpViewController: UIViewController {
         
         PasswordField.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
         
+//        PasswordField.rightAnchor.constraint(equalTo: PassWordTitle.rightAnchor, constant: 10).isActive = true
+        PasswordField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
         RePasswordTitle.topAnchor.constraint(equalTo: PasswordField.bottomAnchor, constant: 10).isActive = true
         
         RePasswordTitle.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
@@ -208,6 +257,9 @@ class SignUpViewController: UIViewController {
         RePasswordField.topAnchor.constraint(equalTo: RePasswordTitle.bottomAnchor, constant: 10).isActive = true
         
         RePasswordField.leftAnchor.constraint(equalTo: SignUpContentView.leftAnchor, constant: 10).isActive = true
+        
+//        RePasswordField.rightAnchor.constraint(equalTo: RePasswordTitle.rightAnchor, constant: 10).isActive = true
+        RePasswordField.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         SignUpBtn.topAnchor.constraint(equalTo: RePasswordField.bottomAnchor, constant: 40).isActive = true
         
