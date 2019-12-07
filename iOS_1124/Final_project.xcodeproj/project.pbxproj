@@ -17,6 +17,8 @@
 		047F7FEA2374A25500ADBB06 /* TimerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F7FE92374A25500ADBB06 /* TimerCollectionViewCell.swift */; };
 		047F7FEC2374A99500ADBB06 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F7FEB2374A99500ADBB06 /* TimerData.swift */; };
 		04F0548023790D1A0014AE30 /* TimerSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0547F23790D1A0014AE30 /* TimerSetupViewController.swift */; };
+		15115B5A239B245E005337FD /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B59239B245E005337FD /* TimePicker.swift */; };
+		15115B5E239B34C5005337FD /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15115B5D239B34C5005337FD /* Roboto-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		047F7FE92374A25500ADBB06 /* TimerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCollectionViewCell.swift; sourceTree = "<group>"; };
 		047F7FEB2374A99500ADBB06 /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		04F0547F23790D1A0014AE30 /* TimerSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetupViewController.swift; sourceTree = "<group>"; };
+		15115B59239B245E005337FD /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		15115B5D239B34C5005337FD /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +68,45 @@
 		044B6DF1237357EA003F12D6 /* Final_project */ = {
 			isa = PBXGroup;
 			children = (
+				15115B5C239B349B005337FD /* Fonts */,
+				15115B5B239B24AF005337FD /* Model */,
+				15115B58239B23C0005337FD /* Controller */,
 				044B6DF2237357EA003F12D6 /* AppDelegate.swift */,
-				044B6E0823735DD7003F12D6 /* TabBarController.swift */,
-				044B6DF6237357EA003F12D6 /* FirstViewController.swift */,
 				047F7FEB2374A99500ADBB06 /* TimerData.swift */,
+				15115B59239B245E005337FD /* TimePicker.swift */,
 				047F7FE92374A25500ADBB06 /* TimerCollectionViewCell.swift */,
-				04F0547F23790D1A0014AE30 /* TimerSetupViewController.swift */,
-				0405A09C2375F461002147F1 /* TimerViewController.swift */,
-				044B6DF8237357EA003F12D6 /* SecondViewController.swift */,
 				044B6DFD237357ED003F12D6 /* Assets.xcassets */,
 				044B6DFF237357ED003F12D6 /* LaunchScreen.storyboard */,
 				044B6E02237357ED003F12D6 /* Info.plist */,
 			);
 			path = Final_project;
+			sourceTree = "<group>";
+		};
+		15115B58239B23C0005337FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044B6DF6237357EA003F12D6 /* FirstViewController.swift */,
+				044B6DF8237357EA003F12D6 /* SecondViewController.swift */,
+				0405A09C2375F461002147F1 /* TimerViewController.swift */,
+				04F0547F23790D1A0014AE30 /* TimerSetupViewController.swift */,
+				044B6E0823735DD7003F12D6 /* TabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		15115B5B239B24AF005337FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15115B5C239B349B005337FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				15115B5D239B34C5005337FD /* Roboto-Black.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +169,7 @@
 			files = (
 				044B6E01237357ED003F12D6 /* LaunchScreen.storyboard in Resources */,
 				044B6DFE237357ED003F12D6 /* Assets.xcassets in Resources */,
+				15115B5E239B34C5005337FD /* Roboto-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +186,7 @@
 				044B6E0923735DD8003F12D6 /* TabBarController.swift in Sources */,
 				0405A09D2375F461002147F1 /* TimerViewController.swift in Sources */,
 				047F7FEC2374A99500ADBB06 /* TimerData.swift in Sources */,
+				15115B5A239B245E005337FD /* TimePicker.swift in Sources */,
 				044B6DF7237357EA003F12D6 /* FirstViewController.swift in Sources */,
 				044B6DF3237357EA003F12D6 /* AppDelegate.swift in Sources */,
 			);

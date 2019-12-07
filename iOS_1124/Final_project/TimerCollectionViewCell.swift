@@ -21,9 +21,7 @@ class TimerCollectionViewCell: UICollectionViewCell {
     weak var editDelegate: EditDelegate?
     
     var mTimer: TimerData
-    var isEdit: Bool = false
-    
-    var parentViewController = FirstViewController()
+    weak var parentViewController: UIViewController?
     
     let backgoundImage = ["iphone_x_wallpaper.jpg", "image1.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
     
@@ -31,7 +29,7 @@ class TimerCollectionViewCell: UICollectionViewCell {
         mTimer = TimerData(backgroundImage: "", duration: "", title: "")
         super.init(frame: frame)
         
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
         
         title = UILabel()
@@ -54,7 +52,7 @@ class TimerCollectionViewCell: UICollectionViewCell {
         
         timeViewBtn = UIButton()
         timeViewBtn.translatesAutoresizingMaskIntoConstraints = false
-        timeViewBtn.setTitle("Begin", for: .normal)
+        timeViewBtn.setTitle("Start", for: .normal)
         timeViewBtn.titleLabel?.font = UIFont.systemFont(ofSize: 22)
         timeViewBtn.setTitleColor(.white, for: .normal)
         timeViewBtn.sizeToFit()
@@ -64,28 +62,18 @@ class TimerCollectionViewCell: UICollectionViewCell {
         trashImageView = UIImageView(image: UIImage(named: "first"))
         trashImageView.backgroundColor = .white
         trashImageView.contentMode = .scaleAspectFit
-        if isEdit {
-            trashImageView.isHidden = false
-        } else {
-            trashImageView.isHidden = true
-        }
         trashImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(trashImageView)
         
-        if !isEdit{
-            setupConstraints()
-            print("not edit")
-        } else {
-            setupEditConstraints()
-            print("edit")
-        }
+        
+       setupConstraints()
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
             title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             title.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
-            title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             title.heightAnchor.constraint(equalToConstant: 20)
         ]);
         NSLayoutConstraint.activate([
@@ -100,60 +88,47 @@ class TimerCollectionViewCell: UICollectionViewCell {
             timeViewBtn.heightAnchor.constraint(equalToConstant: 22),
             timeViewBtn.widthAnchor.constraint(lessThanOrEqualToConstant: 200)
         ]);
-    }
-    
-    func setupEditConstraints() {
-        NSLayoutConstraint.activate([
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            title.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
-            title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            title.heightAnchor.constraint(equalToConstant: 20)
-        ]);
-        NSLayoutConstraint.activate([
-            time.leadingAnchor.constraint(equalTo: title.leadingAnchor),
-            time.widthAnchor.constraint(equalToConstant: 50),
-            time.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-            time.heightAnchor.constraint(equalToConstant: 14)
-        ]);
-        NSLayoutConstraint.activate([
-            timeViewBtn.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            timeViewBtn.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            timeViewBtn.heightAnchor.constraint(equalToConstant: 22),
-            timeViewBtn.widthAnchor.constraint(lessThanOrEqualToConstant: 200)
-        ]);
+        
         NSLayoutConstraint.activate([
             trashImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             trashImageView.widthAnchor.constraint(equalTo: contentView.heightAnchor),
             trashImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor),
             trashImageView.topAnchor.constraint(equalTo: contentView.topAnchor)
         ])
+
     }
     
     @objc func changeTimerView() {
         let background = backgoundImage.randomElement()!
         let timerView = TimerViewController(image: background, duration: mTimer.duration)
         timerView.modalPresentationStyle = .fullScreen
-        parentViewController.present(timerView, animated: true, completion: nil)
+        parentViewController?.present(timerView, animated: true, completion: nil)
     }
     
-    func configure(for timer: TimerData) {
-        self.isEdit = false
+    func configureForView(for timer: TimerData) {
         mTimer = timer
         title.text = timer.title
         time.text = timer.duration + " min"
-//        let backgroundImage = UIImage(named: timer.backgroundImage)!
-//        contentView.backgroundColor = UIColor(patternImage: backgroundImage)
-        contentView.backgroundColor =  UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 0.8)
+        trashImageView.isHidden = true
+        timeViewBtn.isHidden = false
+        contentView.layer.mask = nil
+        contentView.backgroundColor =  UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 1)
     }
+    
     
     func configureForEdit(for timer: TimerData) {
-        mTimer = timer
-        title.text = timer.title
-        time.text = timer.duration + " min"
-        self.isEdit = true
-//        let backgroundImage = UIImage(named: timer.backgroundImage)!
-//        contentView.backgroundColor = UIColor(patternImage: backgroundImage)
-        contentView.backgroundColor =  UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 0.8)
+    }
+    
+    func addSelectedEffect(){
+        let mask = CALayer()
+        mask.frame = bounds
+        let whiteMask = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.5)
+        mask.backgroundColor = whiteMask.cgColor
+        contentView.layer.mask = mask
+    }
+    
+    func removeSelectedEffect(){
+        contentView.layer.mask = nil
     }
     
     
