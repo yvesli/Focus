@@ -19,15 +19,15 @@
 		15115B5A239B245E005337FD /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B59239B245E005337FD /* TimePicker.swift */; };
 		15115B5E239B34C5005337FD /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15115B5D239B34C5005337FD /* Roboto-Black.ttf */; };
 		15115B69239C3C43005337FD /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B66239C3C42005337FD /* SettingTableViewCell.swift */; };
-		15115B6B239C3C7E005337FD /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B6A239C3C7E005337FD /* ToDoTableViewCell.swift */; };
-		15115B6D239C3C81005337FD /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B6C239C3C81005337FD /* ThirdViewController.swift */; };
 		15115B70239C3CD4005337FD /* TableCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B6E239C3CD4005337FD /* TableCellItem.swift */; };
 		15115B71239C3CD4005337FD /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B6F239C3CD4005337FD /* ToDo.swift */; };
 		15115B73239C3E87005337FD /* LauchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B72239C3E87005337FD /* LauchScreen.swift */; };
 		15115B76239C4572005337FD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B75239C4572005337FD /* NetworkManager.swift */; };
-		15115B78239C458E005337FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B77239C458E005337FD /* LoginViewController.swift */; };
 		15115B7A239C45B8005337FD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15115B79239C45B8005337FD /* SignUpViewController.swift */; };
 		15115B7C239C4A64005337FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15115B7B239C4A64005337FD /* LaunchScreen.storyboard */; };
+		1571EB72239C8E8400FAC20E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571EB71239C8E8400FAC20E /* LoginViewController.swift */; };
+		1571EB76239C8ED900FAC20E /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571EB75239C8ED900FAC20E /* ToDoTableViewCell.swift */; };
+		1571EB78239C8EE500FAC20E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571EB77239C8EE500FAC20E /* ThirdViewController.swift */; };
 		15F181A8239C4E1500C68E38 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F181A7239C4E1500C68E38 /* Response.swift */; };
 		F8C6D566BFAD7C674B18FC52 /* Pods_Final_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8868C66E1D9C764CACBF51B /* Pods_Final_project.framework */; };
 /* End PBXBuildFile section */
@@ -47,15 +47,15 @@
 		15115B59239B245E005337FD /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		15115B5D239B34C5005337FD /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		15115B66239C3C42005337FD /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewCell.swift; path = Final_project/SecondView/SettingTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		15115B6A239C3C7E005337FD /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoTableViewCell.swift; path = /Users/pro/Desktop/apps/focus/Focus/iOS/Final_project/ThirdView/ToDoTableViewCell.swift; sourceTree = "<absolute>"; };
-		15115B6C239C3C81005337FD /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = /Users/pro/Desktop/apps/focus/Focus/iOS/Final_project/ThirdView/ThirdViewController.swift; sourceTree = "<absolute>"; };
 		15115B6E239C3CD4005337FD /* TableCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellItem.swift; sourceTree = "<group>"; };
 		15115B6F239C3CD4005337FD /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		15115B72239C3E87005337FD /* LauchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchScreen.swift; sourceTree = "<group>"; };
 		15115B75239C4572005337FD /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		15115B77239C458E005337FD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../launch/launch/LoginViewController.swift; sourceTree = "<group>"; };
 		15115B79239C45B8005337FD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		15115B7B239C4A64005337FD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1571EB71239C8E8400FAC20E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = /Users/pro/Desktop/apps/focus/rapt/RAPT/iOS/Final_project/SecondView/LoginViewController.swift; sourceTree = "<absolute>"; };
+		1571EB75239C8ED900FAC20E /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		1571EB77239C8EE500FAC20E /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		15F181A7239C4E1500C68E38 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		83C01D7842F42B4446191FFE /* Pods-Final_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_project.release.xcconfig"; path = "Target Support Files/Pods-Final_project/Pods-Final_project.release.xcconfig"; sourceTree = "<group>"; };
 		A8868C66E1D9C764CACBF51B /* Pods_Final_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				15115B66239C3C42005337FD /* SettingTableViewCell.swift */,
-				15115B77239C458E005337FD /* LoginViewController.swift */,
+				1571EB71239C8E8400FAC20E /* LoginViewController.swift */,
 				15115B79239C45B8005337FD /* SignUpViewController.swift */,
 				044B6DF8237357EA003F12D6 /* SecondViewController.swift */,
 			);
@@ -163,8 +163,8 @@
 		15115B63239C39D6005337FD /* ThirdView */ = {
 			isa = PBXGroup;
 			children = (
-				15115B6C239C3C81005337FD /* ThirdViewController.swift */,
-				15115B6A239C3C7E005337FD /* ToDoTableViewCell.swift */,
+				1571EB77239C8EE500FAC20E /* ThirdViewController.swift */,
+				1571EB75239C8ED900FAC20E /* ToDoTableViewCell.swift */,
 			);
 			path = ThirdView;
 			sourceTree = "<group>";
@@ -313,19 +313,19 @@
 				15115B76239C4572005337FD /* NetworkManager.swift in Sources */,
 				047F7FEA2374A25500ADBB06 /* TimerCollectionViewCell.swift in Sources */,
 				044B6DF9237357EA003F12D6 /* SecondViewController.swift in Sources */,
-				15115B78239C458E005337FD /* LoginViewController.swift in Sources */,
 				04F0548023790D1A0014AE30 /* TimerSetupViewController.swift in Sources */,
+				1571EB78239C8EE500FAC20E /* ThirdViewController.swift in Sources */,
+				1571EB72239C8E8400FAC20E /* LoginViewController.swift in Sources */,
 				15F181A8239C4E1500C68E38 /* Response.swift in Sources */,
 				044B6E0923735DD8003F12D6 /* TabBarController.swift in Sources */,
 				15115B7A239C45B8005337FD /* SignUpViewController.swift in Sources */,
-				15115B6B239C3C7E005337FD /* ToDoTableViewCell.swift in Sources */,
 				15115B70239C3CD4005337FD /* TableCellItem.swift in Sources */,
 				0405A09D2375F461002147F1 /* TimerViewController.swift in Sources */,
 				15115B69239C3C43005337FD /* SettingTableViewCell.swift in Sources */,
+				1571EB76239C8ED900FAC20E /* ToDoTableViewCell.swift in Sources */,
 				047F7FEC2374A99500ADBB06 /* TimerData.swift in Sources */,
 				15115B5A239B245E005337FD /* TimePicker.swift in Sources */,
 				15115B71239C3CD4005337FD /* ToDo.swift in Sources */,
-				15115B6D239C3C81005337FD /* ThirdViewController.swift in Sources */,
 				044B6DF7237357EA003F12D6 /* FirstViewController.swift in Sources */,
 				15115B73239C3E87005337FD /* LauchScreen.swift in Sources */,
 				044B6DF3237357EA003F12D6 /* AppDelegate.swift in Sources */,
