@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        usernameTextField.addTarget(self, action: #selector(validateEmail), for: .editingDidEnd)
         loginContentView.addSubview(loginTitle)
         loginContentView.addSubview(usernameTitle)
         
@@ -119,6 +119,28 @@ class LoginViewController: UIViewController {
 //       }
 //    }
 //
+    
+    // use Regular expression to check and validate the email address
+    func isValidEmail(emailStr: String) -> Bool {
+        let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredict = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let res = emailPredict.evaluate(with: emailStr)
+        
+        return res
+    }
+    
+    
+    @objc func validateEmail() {
+        let res = isValidEmail(emailStr: self.usernameTextField.text ?? "")
+        if res == true {
+            self.usernameTextField.layer.borderWidth = 1
+            self.usernameTextField.layer.borderColor = UIColor.systemGreen.cgColor
+        } else {
+            self.usernameTextField.layer.borderWidth = 1
+            self.usernameTextField.layer.borderColor = UIColor.systemRed.cgColor
+        }
+    }
+    
     @objc func getLogin() {
         
         let isSuccess = NetworkManager.postLogin(email: usernameTextField.text ?? "none", password: passwordTextField.text  ?? "none") {
