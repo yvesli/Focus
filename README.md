@@ -9,7 +9,7 @@
 
 
 ## General info
-This is a self-motivating app that can help restrain usage of your smartphone.
+This is a self-motivating app that can help you set up a timer for a task, organize daily task.
 
 
 ## Technologies
@@ -19,7 +19,8 @@ This is a self-motivating app that can help restrain usage of your smartphone.
 
 
 ## How to use
-To use api services via api requests, it has several essential components
+* TImer: 
+** add timer by the upper left "plus" button
 ### Web API components
 * [Authentification](#api-authentication)
 
