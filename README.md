@@ -5,7 +5,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [How to Use](#how-to-use)
-* [App ScreenShots] (#app-screen-shots)
+* [App ScreenShots]
 * [More to come](#more-to-come)
 
 
@@ -27,6 +27,10 @@ This is a self-motivating app that can help you set up a timer for a task, organ
 
 ## App ScreenShots
 ![alt text](https://github.com/yvesli/RAPT/blob/version_one/timerView.png)
+![alt text](https://github.com/yvesli/RAPT/blob/version_one/timerSetup.png)
+![alt text](https://github.com/yvesli/RAPT/blob/version_one/todo_list.png)
+![alt text](https://github.com/yvesli/RAPT/blob/version_one/signup.png)
+
 
 ### Web API components
 * [Authentification](#api-authentication)
