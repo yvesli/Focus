@@ -5,7 +5,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [How to Use](#how-to-use)
-* [App ScreenShots]
+* [App ScreenShots](#app-screen-shots)
 * [More to come](#more-to-come)
 
 
