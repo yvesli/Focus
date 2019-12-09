@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     private let loginContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     
     private let loginTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Comfortaa-Bold", size: 50)
         title.textAlignment = .center
         title.text = "Welcome Back!"
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     
     private let usernameTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Email:"
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
     
     private let passWordTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Password:"
@@ -83,9 +83,13 @@ class LoginViewController: UIViewController {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         usernameTextField.addTarget(self, action: #selector(validateEmail), for: .editingDidEnd)
         loginContentView.addSubview(loginTitle)
         loginContentView.addSubview(usernameTitle)
@@ -101,10 +105,10 @@ class LoginViewController: UIViewController {
         
         // arrange the layout
         
+        
         constraintsInit()
-        
-        view.layer.contents = #imageLiteral(resourceName: "5-1").cgImage
-        
+        view.backgroundColor = UIColor.init(red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
+        tabBarController?.tabBar.isHidden = true
         
     }
 //    @objc func isLogin() {

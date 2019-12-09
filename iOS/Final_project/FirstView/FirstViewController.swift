@@ -33,7 +33,7 @@ class FirstViewController: UIViewController {
         
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "first view"
+        navigationItem.title = "Timer"
         UINavigationBar.appearance().isOpaque = true
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

@@ -12,7 +12,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     private let signUpContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -35,7 +35,7 @@ class SignUpViewController: UIViewController {
     
     private let welcomeTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Glad You're here!"
@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController {
     
     private let nameTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Name:"
@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
     
     private let emailTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Email:"
@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
     
     private let PassWordTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Enter a new password:"
@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController {
     
     private let passwordField: UITextField = {
            let textField = UITextField()
-           textField.backgroundColor = .white
+        textField.backgroundColor = .white
            textField.placeholder = "Password"
            textField.frame = .zero
            textField.borderStyle = .roundedRect
@@ -112,7 +112,7 @@ class SignUpViewController: UIViewController {
     
     private let rePasswordTitle: UILabel = {
         let title = UILabel()
-        title.textColor = UIColor(red: 0.412, green: 0.38, blue: 0.38, alpha: 1)
+        title.textColor = .black
         title.font = UIFont(name: "Poppins-Regular", size: 14)
         title.textAlignment = .center
         title.text = "Re-Enter the password:"
@@ -171,7 +171,8 @@ class SignUpViewController: UIViewController {
         view.addSubview(signUpContentView)
         
         constraintsInit()
-        view.layer.contents = #imageLiteral(resourceName: "2").cgImage
+        view.backgroundColor = UIColor.init(red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
+        tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
         
        

@@ -18,6 +18,10 @@ class SecondViewController: UIViewController {
     var preferenceTableCells: [TableCellItem]!
     var timerTableCells: [TableCellItem]!
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -58,7 +62,7 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {

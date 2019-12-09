@@ -27,7 +27,7 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        navigationController?.isNavigationBarHidden = true
         navigationItem.title = "To-Dos"
         UINavigationBar.appearance().isOpaque = true
         navigationController?.navigationBar.tintColor = .white
@@ -51,7 +51,7 @@ class ThirdViewController: UIViewController {
         
         addToDoTextField = UITextField()
         addToDoTextField.font = UIFont.systemFont(ofSize: 20)
-        addToDoTextField.textColor = .white
+        addToDoTextField.textColor = UIColor.init(white: 0.3, alpha: 0.9)
         addToDoTextField.backgroundColor = UIColor(red: 255/255, green: 102/255, blue: 102/255, alpha: 0.5)
         addToDoTextField.layer.cornerRadius = 8
         addToDoTextField.placeholder = placeHolderText
