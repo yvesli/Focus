@@ -5,6 +5,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [How to Use](#how-to-use)
+* [App Screenshots](#app-screenshots)
 * [More to come](#more-to-come)
 
 
@@ -23,6 +24,12 @@ This is a self-motivating app that can help you set up a timer for a task, organ
 * Timer: add timer by the upper right "plus" button; delete timer by clicking "Edit" at upper left, click on any Timer card want to delete, and finish editing by clicking "done".
 * To-Do: add To-Do item into the text box at the bottom of the view; delete the item by swiping to the left.
 * Setting: sign-up by clicking the sign-up cell; login by the login cell
+
+## app features
+[!alt-text](https://github.com/yvesli/RAPT/blob/version_one/timerView.png | width = 100)
+[!alt-text](https://github.com/yvesli/RAPT/blob/version_one/signup.png | width = 100)
+[!alt-text](https://github.com/yvesli/RAPT/blob/version_one/todo_list.png | width = 100)
+
 ### Web API components
 * [List of API addresses](#api-address_list)
 * [Authentification](#api-authentication)
