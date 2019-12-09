@@ -26,7 +26,7 @@ This is a self-motivating app that can help you set up a timer for a task, organ
 * Setting: sign-up by clicking the sign-up cell; login by the login cell
 
 ## app features
-![timer]<img src="https://github.com/yvesli/RAPT/blob/version_one/timerView.png", width="100", height="100">
+<img src="https://github.com/yvesli/RAPT/blob/version_one/timerView.png", width="100", height="100">
 ![sign up](https://github.com/yvesli/RAPT/blob/version_one/signup.png)
 ![to do list](https://github.com/yvesli/RAPT/blob/version_one/todo_list.png)
 
